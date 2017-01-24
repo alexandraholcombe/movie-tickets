@@ -38,9 +38,11 @@ $(function(){
   $(".poster").click(function(){
     console.log("Poster Clicky");
     $(".panel").remove();
-    $(this).parent().append('<div class="panel">' + '<p>' +
-    '"12:00", "3:00", "6:00", "9:00"' +
-      '</p>' + '</div>');
+    $(this).parent().append('<div class="panel">' + '<ul class="showtimeList">' +
+      '</ul>' + '</div>');
+      showtimes.forEach(function(time) {
+        $(".showtimeList").append('<li>'+time+'</li>');
+  });
     // newContact.addresses.forEach(function(address) {
     //   $("ul#addresses").append("<li><p>Address Type:</p> " + address.fullAddress() + "</li>");
   });
