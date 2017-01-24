@@ -54,7 +54,7 @@ li {
 }
 
 .receipt {
-  /*display: none;*/
+  display: none;
   margin-right: 25%;
   margin-left: 25%;
 }

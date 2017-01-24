@@ -3,6 +3,8 @@ var movieTitle;
 var movieTime;
 var age;
 var yourTicket;
+var ticketPrice;
+
 
 
 function Movie(movieTitle, showtimes){
@@ -24,6 +26,7 @@ $(function(){
   $("form.age-form").submit(function(event) {
     event.preventDefault();
     $(".age-verification").fadeOut();
+    $(".age-form").fadeOut();
     age = $(".age-select").val();
 
     //Age selector
@@ -56,7 +59,11 @@ $(function(){
       yourTicket = new Ticket(age, movieTitle, time);
       console.log(yourTicket);
 
-
+      $(".receipt").show();
+      $(".age-verification").fadeIn();
+      $(".receipt h2").text(yourTicket.movieTitle);
+      $("#time").text(yourTicket.time);
+      $("#ticket-price").text(yourTicket.price);
     });
   });
 });
