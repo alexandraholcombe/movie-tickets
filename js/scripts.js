@@ -1,18 +1,47 @@
 //Business
+function Movie(movieTitle, showtimes){
+  this.movieTitle = movieTitle;
+  this.showtimes = showtimes;
+}
 function Ticket(age, movieTitle, time) {
   this.age = age;
   this.movieTitle = movieTitle;
   this.time = time
 };
-
+function showtime(){
+  $(".showtime").text(showtimes);
+}
+var showtimes = ["12:00", "3:00", "6:00", "9:00"];
 
 //User Interface
 $(function(){
   $("form.age-form").submit(function(event) {
-    debugger;
     event.preventDefault();
-    var age = $(".age-select").val();
     $(".age-verification").fadeOut();
-    $(".row").delay(400).fadeIn();
+    var age = $(".age-select").val();
+
+//Age selector
+    if (age === "g") {
+      console.log("THIS IS WORKING");
+      $("#pg-rated-movies").hide();
+      $("#pg13-rated-movies").hide();
+      $("#r-rated-movies").hide();
+    } else if (age === "pg") {
+      $("#pg13-rated-movies").hide();
+      $("#r-rated-movies").hide();
+    } else if (age === "pg-13") {
+      $("#r-rated-movies").hide();
+    };
+  });
+
+//Time panel appender
+  $(".poster").click(function(){
+    console.log("Poster Clicky");
+    $(".panel").remove();
+    $(this).parent().append('<div class="panel">' + '<p>' +
+    '"12:00", "3:00", "6:00", "9:00"' +
+      '</p>' + '</div>');
+    // newContact.addresses.forEach(function(address) {
+    //   $("ul#addresses").append("<li><p>Address Type:</p> " + address.fullAddress() + "</li>");
   });
 });
