@@ -36,6 +36,8 @@ $(function(){
 
 //Time panel appender
   $(".poster").click(function(){
+    debugger;
+    var movieTitle = $(this).attr("alt");
     console.log("Poster Clicky");
     $(".panel").remove();
     $(this).parent().append('<div class="panel">' + '<ul class="showtimeList">' +
