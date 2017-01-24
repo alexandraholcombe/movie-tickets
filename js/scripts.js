@@ -3,7 +3,7 @@ var movieTitle;
 var movieTime;
 var age;
 var yourTicket;
-var ticketPrice;
+var ticketPrice = 12;
 
 
 
@@ -20,6 +20,14 @@ function showtime(){
   $(".showtime").text(showtimes);
 }
 var showtimes = ["12:00", "3:00", "6:00", "9:00"];
+
+var yourPrice = function(age, time) {
+  if (time === "12:00" || time === "3:00" || time === "9:00") {
+    yourTicket.price = ticketPrice * .75;
+  } else {
+    yourTicket.price = ticketPrice;
+  }
+}
 
 //User Interface
 $(function(){
@@ -61,6 +69,7 @@ $(function(){
 
       $(".receipt").show();
       $(".age-verification").fadeIn();
+      yourPrice(age, time);
       $(".receipt h2").text(yourTicket.movieTitle);
       $("#time").text(yourTicket.time);
       $("#ticket-price").text(yourTicket.price);
