@@ -57,4 +57,19 @@ li {
   display: none;
   margin-right: 25%;
   margin-left: 25%;
+  height: 35%;
+}
+
+.receipt img {
+  width: 75%;
+}
+
+span {
+  display: block;
+}
+
+.receipt img {
+  border-radius: 20px;
+  width: 35%;
+  float: left;
 }
