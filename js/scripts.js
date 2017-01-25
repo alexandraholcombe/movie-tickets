@@ -84,6 +84,13 @@ $(function(){
       $(".receipt h2").text(yourTicket.movieTitle);
       $("#time").text(yourTicket.time);
       $("#ticket-price").text("$" + yourTicket.price);
+
+      $(".age-verification").click(function(){
+        $(".age-verification").fadeOut();
+        $(yourTicket.posterImage).delay(400).fadeOut(400, function() {
+          $(this).parent().remove(yourTicket.posterImage);
+        });
+      })
     });
   });
 });
